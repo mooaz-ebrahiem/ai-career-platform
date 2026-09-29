@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">AI <span class="accent">Career</span></div>
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="index.html">Upload</a>
+        <a href="job-match.html">Job Match</a>
+        <a href="ask-cv.html">Ask my CV</a>
+        <button class="logout">Logout</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Build your <span class="blue">future</span> with AI guidance.</h1>
+        <p>
+          Analyze CVs, match job opportunities, and discover the right next career move with smart recommendations.
+        </p>
+        <div class="welcome-box">
+          <strong>Welcome:</strong> <span id="userEmail">User</span>
+        </div>
+        <div class="hero-actions">
+          <button class="btn primary">Upload Resume</button>
+        </div>
+      </div>
+
+      <div class="stats-box">
+        <div class="mini-chart" aria-label="Performance chart">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <article class="card">
+        <h3>Job Recommendations</h3>
+        <p class="metric" id="careerMatches">No recommendations stored</p>
+        <div class="small" id="careerMatchesNote">Career advice is not available from the backend yet.</div>
+      </article>
+
+      <article class="card">
+        <h3>Resume Score</h3>
+        <p class="metric" id="resumeScore">0/100</p>
+        <div class="small">Based on resume completeness</div>
+      </article>
+
+      <article class="card">
+        <h3>AI Insights</h3>
+        <ul class="feature-list" id="insightList">
+          <li>No insights available yet</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Total Resumes</h3>
+        <p class="metric" id="totalResumes">0</p>
+        <div class="small">Uploaded and analyzed CVs</div>
+      </article>
+    </section>
+
+    <section class="content-section" aria-labelledby="resumeHeading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Your library</p>
+          <h2 id="resumeHeading">Resumes</h2>
+        </div>
+        <a class="btn secondary" href="index.html">Upload a resume</a>
+      </div>
+      <p id="dashboardMessage" class="notice" role="status" aria-live="polite"></p>
+      <div id="resumeList" class="resume-list"></div>
+      <div id="emptyResumes" class="empty-state" hidden>
+        <h3>No resumes yet</h3>
+        <p>Upload your first one to start analysing your career profile.</p>
+        <a class="btn primary" href="index.html">Upload your first resume</a>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="analysisHeading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Latest insight</p>
+          <h2 id="analysisHeading">Resume analysis</h2>
+        </div>
+      </div>
+      <div id="analysisNotice" class="notice" role="status" aria-live="polite"></div>
+      <div id="analysisPanel" class="analysis-panel" hidden>
+        <h3 id="analysisName"></h3>
+        <div class="analysis-grid">
+          <div><strong>Skills</strong><div id="analysisSkills" class="chip-list"></div></div>
+          <div><strong>Education</strong><div id="analysisEducation"></div></div>
+          <div><strong>Experience</strong><div id="analysisExperience"></div></div>
+          <div class="analysis-summary"><strong>Summary</strong><p id="analysisSummary"></p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

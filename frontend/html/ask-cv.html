@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ask my CV</title>
+  <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">AI <span class="accent">Career</span></div>
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="index.html">Upload</a>
+        <a href="job-match.html">Job Match</a>
+        <a href="ask-cv.html">Ask my CV</a>
+        <button class="logout">Logout</button>
+      </nav>
+    </header>
+
+    <main class="content-section tool-page">
+      <p class="eyebrow">Resume assistant</p>
+      <h1>Ask my CV</h1>
+      <p class="page-intro">Ask a question and get an answer based only on your selected resume.</p>
+      <form id="questionForm" class="tool-form">
+        <label for="resumeChoice">Resume</label>
+        <select id="resumeChoice" required>
+          <option value="">Loading resumes...</option>
+        </select>
+        <label for="question">Question</label>
+        <input id="question" minlength="3" maxlength="1000" placeholder="What experience do I have with project management?" required />
+        <button class="btn primary" type="submit">Ask question</button>
+      </form>
+      <p id="questionMessage" class="notice" role="status" aria-live="polite"></p>
+      <section id="answerPanel" class="chat-panel" hidden aria-live="polite">
+        <div class="chat-message user-message"><strong>Your question</strong><p id="askedQuestion"></p></div>
+        <div class="chat-message answer-message"><strong>Resume assistant</strong><p id="answer"></p></div>
+        <div id="sourcesPanel" hidden>
+          <h3>Sources from your resume</h3>
+          <ul id="sources"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../js/api.js"></script>
+  <script src="../js/ask-cv.js"></script>
+</body>
+</html>

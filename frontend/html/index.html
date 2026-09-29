@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload Resume</title>
+  <link rel="stylesheet" href="../css/index.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="upload-box">
+      <div class="topbar">
+        <div class="brand">AI <span>Career</span></div>
+        <nav class="nav">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="job-match.html">Job Match</a>
+          <a href="ask-cv.html">Ask my CV</a>
+          <button class="logout">Logout</button>
+        </nav>
+      </div>
+
+      <h1 class="upload-title">Upload Resume</h1>
+      <p class="subtitle">Select a PDF resume up to 5 MB for analysis.</p>
+
+      <form id="resumeForm">
+        <div class="form-row">
+          <label for="resumeFile">PDF File:</label>
+          <div class="input-file">
+            <input type="file" id="resumeFile" accept=".pdf,application/pdf" />
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button type="submit" class="btn-upload">Upload</button>
+        </div>
+      </form>
+
+      <div id="message" class="message"></div>
+      <section id="analysisResult" class="analysis-result" hidden aria-live="polite">
+        <h2>Resume analysis</h2>
+        <dl id="analysisDetails"></dl>
+      </section>
+    </div>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/index.js"></script>
+</body>
+</html>

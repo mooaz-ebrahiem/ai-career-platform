@@ -1,0 +1,10 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+chroma_db/
+career_platform.db
+career_platform.db-*
+uploads/*
+!uploads/.gitkeep

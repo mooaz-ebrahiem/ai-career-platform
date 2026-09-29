@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Match</title>
+  <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">AI <span class="accent">Career</span></div>
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="index.html">Upload</a>
+        <a href="job-match.html">Job Match</a>
+        <a href="ask-cv.html">Ask my CV</a>
+        <button class="logout">Logout</button>
+      </nav>
+    </header>
+
+    <main class="content-section tool-page">
+      <p class="eyebrow">Career fit</p>
+      <h1>Match your resume to a job</h1>
+      <p class="page-intro">Compare one of your uploaded resumes with a job description.</p>
+      <form id="matchForm" class="tool-form">
+        <label for="resumeChoice">Resume</label>
+        <select id="resumeChoice" required>
+          <option value="">Loading resumes...</option>
+        </select>
+        <label for="jobDescription">Job description</label>
+        <textarea id="jobDescription" rows="10" minlength="50" maxlength="12000" placeholder="Paste at least 50 characters from the job description here." required></textarea>
+        <button class="btn primary" type="submit">Compare resume</button>
+      </form>
+      <p id="matchMessage" class="notice" role="status" aria-live="polite"></p>
+      <section id="matchResult" class="result-panel" hidden aria-live="polite">
+        <div class="result-heading">
+          <h2>Match result</h2>
+          <strong id="matchScore"></strong>
+        </div>
+        <div class="score-bar" aria-label="Match score"><span id="scoreBar"></span></div>
+        <p><strong>Recommendation:</strong> <span id="recommendation"></span></p>
+        <div class="result-columns">
+          <div><h3>Strengths</h3><ul id="strengths"></ul></div>
+          <div><h3>Skill gaps</h3><ul id="skillGaps"></ul></div>
+        </div>
+        <h3>Explanation</h3>
+        <p id="explanation"></p>
+      </section>
+    </main>
+  </div>
+  <script src="../js/api.js"></script>
+  <script src="../js/job-match.js"></script>
+</body>
+</html>
